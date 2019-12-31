@@ -5,6 +5,8 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cpu_mem_io=`$CURRENT_DIR/scripts/cpu-mem-io.sh`
 interpolation_string="\#{cpu_mem_io}"
 
+source "${CURRENT_DIR}/scripts/helpers.sh"
+
 do_interpolation() {
   local string="$1"
   local interpolated="${string/$interpolation_string/$cpu_mem_io}"
