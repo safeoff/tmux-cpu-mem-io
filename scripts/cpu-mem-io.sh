@@ -10,10 +10,14 @@ color () {
     fi    
 }
 
+free=`free -t | tail -1`
+set ${free}
+max=${2}
+hun=$((max/100))
 vmstat 1 2 | tail -1 | while read _ _ _ m1 _ m2 _ _ _ _ _ _ c1 c2 _ d _
 do
     m=$((m1 + m2))
-    m=$(((16000000-m)/160000))
+    m=$(((max-m)/hun))
     c=$((c1 + c2))
     echo "$(color $c CPU) | $(color $m MEM) | $(color $d I/O)"
 done
