@@ -8,7 +8,7 @@ Linux Only.
 
 ## Usage
 ```
-set -g status-right "#($TMUX_PLUGIN_MANAGER_PATH/tmux-cpu-mem-io/scripts/cpu-mem-io.sh)"
+set -g status-right "#(.tmux/plugins/tmux-cpu-mem-io/scripts/cpu-mem-io.sh)"
 ```
 
 ## Install
